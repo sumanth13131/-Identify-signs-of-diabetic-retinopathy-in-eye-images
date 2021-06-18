@@ -1,6 +1,6 @@
 Flask==1.1.2
 numpy==1.20.0
-tensorflow==2.5.0
+tensorflow==2.2.0
 gunicorn==20.0.4
 opencv-python-headless==4.5.2.52
 pybase64==1.1.4

@@ -38,8 +38,14 @@ function predict() {
         }
         response.json().then(function (data) {
           // console.log(data);
-          document.getElementById("cls").innerHTML = data.cls;
-          document.getElementById("acc").innerHTML = data.acc;
+          if (data.cls === "Low Accuracy") {
+            document.getElementById("cls").innerHTML = "Not detected";
+            document.getElementById("acc").innerHTML = "0";
+            swal("Please provide good IMAGE (Detected with Low Accuracy)");
+          } else {
+            document.getElementById("cls").innerHTML = data.cls;
+            document.getElementById("acc").innerHTML = data.acc;
+          }
         });
       })
       .catch(function (error) {
